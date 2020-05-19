@@ -13,42 +13,58 @@
 
 }
 
+/*----------------------------- APPROCHE MOBILE FIRST -----------------------------*/
+
+* {box-sizing: border-box;} /* Ttous les éléments définis avec une largeur en pourcentage intégreront leurs margin et padding à leur pourcentage. */
+
 body
 {	font-family: 'barlowregular', Arial, Verdana, sans-serif;
     font-size: 10px; /* dimension de référence pour les textes des autres styles (rem) */
 	margin: 0px; /* Ecrase la margin de 6 pixels par défaut des navigateurs.*/
-	padding-left: 20px;
 }
 
-.fas 
-{	font-size: 1.5rem;
+
+.fas /*[icone]*/
+{	display: block;
+	font-size: 1.5rem;
 	color: #FF9800;
-	margin-right: 20px;
+	padding-right: 20px;
 }
-.far 
+
+
+.far /*[icone]*/ 
 {	font-size: 0.8rem;
 	color: #FF9800;
+}
+
+
+.main, footer
+{	margin: 10px; 50px; 0 50px;
 }
 
 /*------------------------------------ HEADER ------------------------------------*/
 
 header
 {	padding-left: 30px;
+	text-align: center;
 }
 
-h1/*----- PRENOM + NOM -----*/
+
+h1 /*----- PRENOM + NOM -----*/
 {	font-size: 2.5rem;
 	text-transform: uppercase;
 	font-weight: bolder;
 	color: #FF9800;
 }
 
+
 h1 strong
 {   font-weight: lighter;
 	color: black; 
 }
 
-h2/*----- PROFESSION -----*/
+
+h2 /*----- PROFESSION -----*/
 {	font-size: 1.3rem;
 	font-weight: lighter;
 	white-space: normal;
@@ -56,50 +72,55 @@ h2/*----- PROFESSION -----*/
 	/* border: 5px solid green; AIDE A LA VISUALISATION*/
 }
 
-h2::after/*----- FILET -----*/
+
+.souligne
+{	text-decoration: 2px;
+	text-decoration-line: underline;
+	text-decoration-style: solid;
+	text-decoration-color: #FF9800;
+}
+
+
+/* h2::after 
 {   content: '';
     display: block;
     width: 55px;
     height: 1px;
     background:#FF9800;
-}
+} FILET SUR BLOC ne suit pas le texte lorsque celui-ci est centré*/
 
-/*------------------------------------ CONTAINER ------------------------------------*/
+/*------------------------------------ SECTION EXPERIENCE + FORMATION ------------------------------------*/
 
-.parcours/*----- EXPERIENCE + FORMATION -----*/
+
+
+.parcours/*----- SOUS TITRE EXPERIENCE + FORMATION -----*/
 {	font-size: 1.3rem;
 	font-weight: bolder;
 	text-transform: uppercase;
 	border-bottom: 2px solid #FF9800;
-	margin: 50px 0 20px 30px;
+	margin: 50px 0 20px 0;
 }
 
 
-/*------------------------------------ ARTICLE DU CONTAINER ------------------------------------*/
+/*------------------------------------ ARTICLE DE LA SECTION ------------------------------------*/
 .date
-{	display: inline-block;
-	vertical-align: top;
-	min-width: 150px;
-	font-size: 1rem;
-	padding-left: 30px;
-	/* background-color: yellow; AIDE A LA VISUALISATION*/
+{	font-size: 1.3rem;
+	margin: 0;
 }
 
 
 .statue
 {	display: inline-block;
-	vertical-align: top;
-	/*max-width: 400px;*/
-	margin-top: -20px;
-	/* background-color: silver; AIDE A LA VISUALISATION*/
 }
+
 
 h3/*----- POSTE OCCUPE -----*/
 {	font-size: 1.5rem;
 	font-variant: small-caps;
 	line-height: 90%;
-	/* border: 1px solid blue; AIDE A LA VISUALISATION*/
+	margin: 10px 0 20px 0;
 }
+
 
 .societe/*----- POUR QUI -----*/
 {	font-size: 1.1rem;
@@ -110,12 +131,14 @@ h3/*----- POSTE OCCUPE -----*/
 	/* border: 1px solid red; AIDE A LA VISUALISATION*/
 }
 
+
 .societe mark/*----- POUR QUI -----*/
 {	font-size: 0.9rem;
 	font-weight: lighter;
 	color: gray;
 	background-color: white;
 }
+
 
 ul/*----- TACHES EXÉCUTÉES	 -----*/
 {	font-size: 1rem;/* 1 : taille normale */
@@ -124,9 +147,11 @@ ul/*----- TACHES EXÉCUTÉES	 -----*/
 	line-height: 120%;
 	margin-top: -10px;
 	margin-left: -20px;
+	margin-bottom: 50px;
 	list-style-type: none;
 	/* background-color: green; AIDE A LA VISUALISATION*/
 }
+
 
 ul li::before
 {	content: "•"; 
@@ -136,53 +161,201 @@ ul li::before
 	margin-left: -1em 	
 }
 
+
 li
 {	margin-top: 5px;
 }
 
-/*------------------------------------ PARTIE ORANGE ------------------------------------*/
+/*------------------------------------ FIN DE LA SECTION EXPERIENCE + FORMATION ------------------------------------*/
+
+/*------------------------------------ SECTION ORANGE ------------------------------------*/
+
 aside
-{	display: flex;
-	flex-direction: column;
-	max-width: 20%;
+{	text-align: center;
+	width: 100%;
 }
 
+
+.hidden, .hiddenloisir, .hiddencontact, .hiddencoordonnees
+{	display: none;
+}
+
+
 .roundedimage
-{	
-	display: inline-block;
+{	display: inline-block;
     border-radius: 50%;
     width: 150px;
     height: 150px;
     overflow: hidden;
-    margin: 40px auto 20px auto;
+	margin: 40px auto 20px auto;/* CENTRER*/
+	box-shadow: 1px 1px 12px #555;
 }
 
-img {
-    width: inherit;
-    height: inherit;
-    border-radius: inherit;
-  }
 
-/* .soustitre
-{	font-size: 1rem;
-	font-variant: capitalize;
-	font-weight: normal;
+img 
+{	width: inherit;
+    height: inherit;
+	border-radius: inherit;
+}
+
+
+.soustitre, .hiddencontact
+{	font-size: 1.2rem;
+	text-transform: uppercase;
+	font-weight: bolder;
 	color: #FF9800;
 	height: 30px;
 	text-align: center;
-	line-height: 2em;/* CENTER 1 SEULE LIGNE*/
+	line-height: 30px;/* CENTRER 1 SEULE LIGNE*/
 	white-space: nowrap;/* INTERDICTION D'ALLER A LA LIGNE*/
 	background-color: black;
+	padding: 0;
+	margin: 0;
 }
 
-.soustitre p
-{	font-size: 0.8rem;
+
+.coordonnees, .recomandation, .coordonneesjustify, .mailcoordonnees, .hiddencoordonnees 
+{	font-size: 1rem;
 	font-weight: normal;
-	text-align: left;
-	padding: 0 30px 0 30px;
+	padding:10px 30px 0 30px;
 	word-break: break-word;	
+	line-height: 1.4rem;
+	margin-top: 0;
 }
 
-.soustitre p em
-{font-weight: bolder;
-} */
+
+.coordonnees
+{	text-align: center;
+}
+
+
+.coordonnees em, .recomandation em, .mailcoordonnees em, .hiddencoordonnees em
+{	font-weight: bolder;
+	font-style: normal;
+} 
+
+
+aside article
+{	background-color:  #FF9800;
+	padding-bottom: 2px;
+}
+
+
+.loisir
+{	text-align: center;
+}
+
+
+.fa-biking, .fa-hammer, .fa-microscope
+{	display: inline-block;
+	width: 50px;
+	height: 50px;
+	padding: 10px 0px 0 0px;
+	border: 2px solid black;
+	border-radius: 50%;
+	color: black;
+	margin: 0 10px 0 10px;
+}
+
+footer
+{margin: 0;
+}
+
+/*-----------------------------MEDIA QUERY TABLETTE-----------------------------*/
+
+@media only screen and (min-width: 800px)
+{
+
+
+.hidden, .hiddenloisir, .hiddencontact, .hiddencoordonnees
+{	display: block;
+}
+
+h1, h2 /*----- PRENOM + NOM -----*/
+{	display: inline;
+	padding-right: 20px;
+}
+
+.main article
+{	display: flex; /* AFFICHE A L'HORIZONTALE */
+	align-items: baseline;
+}
+
+	.date
+{  min-width: 200px;
+}
+
+
+}
+
+
+/*-----------------------------MEDIA QUERY DESKTOP-----------------------------*/
+
+@media only screen and (min-width: 920px)
+{
+
+body
+{	display: flex;
+}
+
+
+aside
+{	text-align: left;
+	width: 300px;
+	height: 2300px;
+	background-color:  #FF9800;
+}
+
+
+.hiddenloisir
+{	padding-top: 1310px;
+}
+
+.coordonnees
+{	text-align: left;
+}
+
+.coordonneesjustify
+{	text-align: justify;
+}
+
+.flex
+{	display: flex;
+	flex-direction: column;
+}
+
+
+.flex article:nth-child(1) 
+{order: 3;}
+
+.flex article:nth-child(2) 
+{order: 4;
+/* align-self: flex-end; */
+flex-grow: 1;
+}
+
+.flex article:nth-child(3) 
+{order: 2;}
+
+.flex article:nth-child(4) 
+{order: 1;}
+
+
+.main
+{ with: 100%;
+	padding: 0 30px;
+}
+
+h1, h2 /*----- PRENOM + NOM -----*/
+{	display: block;
+	text-align: left;
+}
+
+
+
+}
+
+
+
+
+
